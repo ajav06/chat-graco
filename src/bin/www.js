@@ -7,6 +7,7 @@ import app from '../app'
 import http from 'http'
 import debug from 'debug'
 import { startSocketIO } from '../services/socket'
+import '@components/chat'
 
 debug('backend:server')
 
