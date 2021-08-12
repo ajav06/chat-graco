@@ -51,6 +51,6 @@ io.on('connection', (socket) => {
 
     const userD = users.splice(index, 1)
 
-    io.to(room).emit('disconnectUser', userD?.username)
+    io.to(room).emit('disconnectUser', userD[0]?.username)
   })
 })
