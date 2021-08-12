@@ -47,7 +47,9 @@ io.on('connection', (socket) => {
   })
 
   socket.on('disconnect', () => {
-    const userD = users.find((user) => user.socket === socket.id)
+    const index = users.findIndex((user) => user.socket === socket.id)
+
+    const userD = users.splice(index, 1)
 
     io.to(room).emit('disconnectUser', userD?.username)
   })
